@@ -1,5 +1,5 @@
 def delete_dish(menu):
-    """Функція Учасника В: Видалення та підрахунок"""
+
     if not menu:
         print("❌ Меню порожнє, видаляти нічого.")
         return
@@ -10,7 +10,7 @@ def delete_dish(menu):
         name_to_delete = input("Введіть назву страви: ").strip().lower()
         initial_len = len(menu)
 
-        # Використовуємо menu[:] щоб змінити оригінальний список
+
         menu[:] = [dish for dish in menu if dish.get('name', '').lower() != name_to_delete]
 
         if len(menu) < initial_len:
@@ -30,5 +30,5 @@ def delete_dish(menu):
     else:
         print("❌ Помилка: оберіть 1 або 2.")
 
-    # Обов'язкова умова завдання: підрахунок залишку
+
     print(f"📊 Залишилося страв у меню: {len(menu)}")
