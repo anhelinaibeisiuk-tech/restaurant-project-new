@@ -108,6 +108,19 @@ def show_menu():
             print(f"   {dish['опис']}")
             print("-" * 20)
     print("="*40)
+#Гравець Г
+def total_sum(menu):
+    total = sum(dish['price'] for dish in menu)
+    print(f"Загальна вартість усіх страв: {total} грн")
+
+def category_sum(menu, category_name):
+    total = sum(dish['price'] for dish in menu if dish.get('category') == category_name)
+    print(f"Вартість категорії {category_name}: {total} грн")
+
+def sort_menu(menu, reverse_order):
+    sorted_list = sorted(menu, key=lambda x: x['price'], reverse=reverse_order)
+    for dish in sorted_list:
+        print(f"{dish['name']} — {dish['price']} грн")
 
 def main():
     
@@ -133,18 +146,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-logicG
-#Гравець Г
-def total_sum(menu):
-    total = sum(dish['price'] for dish in menu)
-    print(f"Загальна вартість усіх страв: {total} грн")
-
-def category_sum(menu, category_name):
-    total = sum(dish['price'] for dish in menu if dish.get('category') == category_name)
-    print(f"Вартість категорії {category_name}: {total} грн")
-
-def sort_menu(menu, reverse_order):
-    sorted_list = sorted(menu, key=lambda x: x['price'], reverse=reverse_order)
-    for dish in sorted_list:
-        print(f"{dish['name']} — {dish['price']} грн")
-dev
